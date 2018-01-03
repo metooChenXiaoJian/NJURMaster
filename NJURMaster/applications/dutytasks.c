@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
-  * @brief 1msÈÎÎñ
-  * @param ÏµÍ³´Ó¿ª»úµ½ÏÖÔÚ¾­¹ıµÄºÁÃëÊı
+  * @brief 1msä»»åŠ¡
+  * @param ç³»ç»Ÿä»å¼€æœºåˆ°ç°åœ¨ç»è¿‡çš„æ¯«ç§’æ•°
   * @retval None
   */
 static void Duty_1ms(u32 _time)
@@ -11,6 +11,7 @@ static void Duty_1ms(u32 _time)
 	DatatransferTask(_time);
 	WorkStateFSM(_time);
 	MPU6500_Data_Prepare();
+	IST8310_Data_Prepare();
 #if 0
 	IMUupdate((float)(loop_time/2000000.0f),MPU6500_Gyro.x,MPU6500_Gyro.y,MPU6500_Gyro.z,
 						MPU6500_Acc.x,MPU6500_Acc.y,MPU6500_Acc.z,
@@ -26,8 +27,8 @@ static void Duty_1ms(u32 _time)
 }
 
 /**
-  * @brief 2msÈÎÎñ
-  * @param ÏµÍ³´Ó¿ª»úµ½ÏÖÔÚ¾­¹ıµÄºÁÃëÊı
+  * @brief 2msä»»åŠ¡
+  * @param ç³»ç»Ÿä»å¼€æœºåˆ°ç°åœ¨ç»è¿‡çš„æ¯«ç§’æ•°
   * @retval None
   */
 static void Duty_2ms(u32 _time)
@@ -38,8 +39,8 @@ static void Duty_2ms(u32 _time)
 }
 
 /**
-  * @brief 5msÈÎÎñ
-  * @param ÏµÍ³´Ó¿ª»úµ½ÏÖÔÚ¾­¹ıµÄºÁÃëÊı
+  * @brief 5msä»»åŠ¡
+  * @param ç³»ç»Ÿä»å¼€æœºåˆ°ç°åœ¨ç»è¿‡çš„æ¯«ç§’æ•°
   * @retval None
   */
 static void Duty_5ms(u32 _time)
@@ -52,8 +53,8 @@ static void Duty_5ms(u32 _time)
 }
 
 /**
-  * @brief 10msÈÎÎñ
-  * @param ÏµÍ³´Ó¿ª»úµ½ÏÖÔÚ¾­¹ıµÄºÁÃëÊı
+  * @brief 10msä»»åŠ¡
+  * @param ç³»ç»Ÿä»å¼€æœºåˆ°ç°åœ¨ç»è¿‡çš„æ¯«ç§’æ•°
   * @retval None
   */
 static void Duty_10ms(u32 _time)
@@ -65,8 +66,8 @@ static void Duty_10ms(u32 _time)
 }
 
 /**
-  * @brief 20msÈÎÎñ
-  * @param ÏµÍ³´Ó¿ª»úµ½ÏÖÔÚ¾­¹ıµÄºÁÃëÊı
+  * @brief 20msä»»åŠ¡
+  * @param ç³»ç»Ÿä»å¼€æœºåˆ°ç°åœ¨ç»è¿‡çš„æ¯«ç§’æ•°
   * @retval None
   */
 static void Duty_20ms(u32 _time)
@@ -76,8 +77,8 @@ static void Duty_20ms(u32 _time)
 }
 
 /**
-  * @brief 50msÈÎÎñ
-  * @param ÏµÍ³´Ó¿ª»úµ½ÏÖÔÚ¾­¹ıµÄºÁÃëÊı
+  * @brief 50msä»»åŠ¡
+  * @param ç³»ç»Ÿä»å¼€æœºåˆ°ç°åœ¨ç»è¿‡çš„æ¯«ç§’æ•°
   * @retval None
   */
 static void Duty_50ms(u32 _time)
@@ -95,10 +96,10 @@ static void Duty_50ms(u32 _time)
 }
 
 /**
-  * @brief ÏµÍ³Ö÷ÈÎÎñÑ­»·
+  * @brief ç³»ç»Ÿä¸»ä»»åŠ¡å¾ªç¯
   * @param None
   * @retval None
-  * @details ÓÉ¶¨Ê±Æ÷Ã¿ºÁÃë×¼Ê±µ÷ÓÃ£¬ÓÉÕâÀï½øÈë¸÷ÖÖtask
+  * @details ç”±å®šæ—¶å™¨æ¯æ¯«ç§’å‡†æ—¶è°ƒç”¨ï¼Œç”±è¿™é‡Œè¿›å…¥å„ç§task
   */
 void Duty_loop(void)
 {
