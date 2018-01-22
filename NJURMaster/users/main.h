@@ -9,7 +9,7 @@
 #include "laser.h"
 #include "led.h"
 #include "pwm.h"
-//#include "rc.h"
+#include "rctask.h"
 #include "timer.h"
 #include "usart1.h"
 #include "usart2.h"

@@ -34,10 +34,5 @@ void All_Init(void)
 	{
 		delay_ms(200);
 	}
-
-
-
-	
-	
 	TIM6_Start();
 }

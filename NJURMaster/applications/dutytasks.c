@@ -26,7 +26,7 @@ static void Duty_1ms(u32 _time)
 #endif
 }
 
-/**
+/**看看，
   * @brief 2ms任务
   * @param 系统从开机到现在经过的毫秒数
   * @retval None
@@ -46,7 +46,6 @@ static void Duty_2ms(u32 _time)
 static void Duty_5ms(u32 _time)
 {
 	u32 loop_time = GetInnerLoop(Task_5ms_Time);
-	IST8310_Data_Prepare();
 	CheckDog();
 	ChassisControl(loop_time/1000000.0f);
 	GimbalControl(loop_time/1000000.0f);
